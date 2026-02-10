@@ -1,8 +1,5 @@
 package tn.esprit.projet_foyer.Entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +13,11 @@ import lombok.Setter;
 public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idUniversite ;
-    String NomUniversite ;
-    String AddresseUniversite ;
+    private Long idUniversite ;
+    private String NomUniversite ;
+    private String AddresseUniversite ;
+
+    @OneToOne
+    private Foyer foyer;
+
 }

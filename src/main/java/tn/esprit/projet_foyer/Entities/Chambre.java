@@ -1,12 +1,11 @@
 package tn.esprit.projet_foyer.Entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +15,13 @@ import lombok.Setter;
 public class Chambre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idChambre ;
-    TypeChambre typeC ;
-    Long numeroChambre ;
+    private Long idChambre ;
+    private TypeChambre typeC ;
+    private Long numeroChambre ;
+
+    @ManyToOne
+    Bloc bloc;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Reservation> reservations ;
 }
