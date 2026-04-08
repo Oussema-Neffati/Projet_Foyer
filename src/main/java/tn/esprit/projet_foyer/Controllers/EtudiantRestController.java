@@ -61,4 +61,10 @@ public class EtudiantRestController {
     public List<Etudiant> searchByNameAndPrenom(@PathVariable String nom, @PathVariable String prenom) {
         return etudiantService.chercherParNomEtPrenom(nom, prenom);
     }
+
+    // http://localhost:9090/etudiant/search-by-cin-jpql/12345678
+    @GetMapping("/search-by-cin-jpql/{cin}")
+    public Etudiant findStudentByCinJPQL(@PathVariable Long cin) {
+        return etudiantService.findStudentByCinJPQL(cin);
+    }
 }

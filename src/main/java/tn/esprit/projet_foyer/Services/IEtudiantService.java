@@ -14,4 +14,6 @@ public interface IEtudiantService {
     List<Etudiant> chercherParNomContient(String nom);
     Etudiant chercherParCin(Long cin);
     List<Etudiant> chercherParNomEtPrenom(String nom, String prenom);
+
+    Etudiant findStudentByCinJPQL(Long cin);
 }

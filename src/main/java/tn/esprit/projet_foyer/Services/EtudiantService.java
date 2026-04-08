@@ -53,5 +53,10 @@ public class EtudiantService implements IEtudiantService {
         return etudiantRepository.findByNomEtAndPrenomEt(nom, prenom);
     }
 
+    @Override
+    public Etudiant findStudentByCinJPQL(Long cin) {
+        return etudiantRepository.findStudentByCinJPQL(cin);
+    }
+
 
 }
