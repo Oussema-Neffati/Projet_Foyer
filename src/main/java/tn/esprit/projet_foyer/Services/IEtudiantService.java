@@ -9,4 +9,9 @@ public interface IEtudiantService {
     Etudiant updateEtudiant(Etudiant etudiant);
     void deleteEtudiant(Long idEtudiant);
     List<Etudiant> findAllEtudiants();
+
+    List<Etudiant> chercherParNom(String nomEt);
+    List<Etudiant> chercherParNomContient(String nom);
+    Etudiant chercherParCin(Long cin);
+    List<Etudiant> chercherParNomEtPrenom(String nom, String prenom);
 }

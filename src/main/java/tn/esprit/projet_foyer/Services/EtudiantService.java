@@ -32,4 +32,26 @@ public class EtudiantService implements IEtudiantService {
     public List<Etudiant> findAllEtudiants() {
         return etudiantRepository.findAll();
     }
+
+    @Override
+    public List<Etudiant> chercherParNom(String nomEt) {
+        return etudiantRepository.findByNomEt(nomEt);
+    }
+
+    @Override
+    public List<Etudiant> chercherParNomContient(String nom) {
+        return etudiantRepository.findByNomEtContains(nom);
+    }
+
+    @Override
+    public Etudiant chercherParCin(Long cin) {
+        return etudiantRepository.findByCin(cin);
+    }
+
+    @Override
+    public List<Etudiant> chercherParNomEtPrenom(String nom, String prenom) {
+        return etudiantRepository.findByNomEtAndPrenomEt(nom, prenom);
+    }
+
+
 }

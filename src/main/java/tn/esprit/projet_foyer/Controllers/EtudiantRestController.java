@@ -37,4 +37,28 @@ public class EtudiantRestController {
     public void removeEtudiant(@PathVariable("etudiant-id") Long eId) {
         etudiantService.deleteEtudiant(eId);
     }
+
+    // http://localhost:9090/etudiant/search-by-name/Ahmed
+    @GetMapping("/search-by-name/{nom}")
+    public List<Etudiant> searchByName(@PathVariable String nom) {
+        return etudiantService.chercherParNom(nom);
+    }
+
+    // http://localhost:9090/etudiant/search-by-name-contains/ah
+    @GetMapping("/search-by-name-contains/{nom}")
+    public List<Etudiant> searchByNameContains(@PathVariable String nom) {
+        return etudiantService.chercherParNomContient(nom);
+    }
+
+    // http://localhost:9090/etudiant/search-by-cin/12345678
+    @GetMapping("/search-by-cin/{cin}")
+    public Etudiant searchByCin(@PathVariable Long cin) {
+        return etudiantService.chercherParCin(cin);
+    }
+
+    // http://localhost:9090/etudiant/search-by-name-prenom/Ahmed/Mohamed
+    @GetMapping("/search-by-name-prenom/{nom}/{prenom}")
+    public List<Etudiant> searchByNameAndPrenom(@PathVariable String nom, @PathVariable String prenom) {
+        return etudiantService.chercherParNomEtPrenom(nom, prenom);
+    }
 }

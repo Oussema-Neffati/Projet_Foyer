@@ -37,4 +37,5 @@ public class ChambreRestController {
     public void removeChambre(@PathVariable("chambre-id") Long cId) {
         chambreService.deleteChambre(cId);
     }
+
 }
