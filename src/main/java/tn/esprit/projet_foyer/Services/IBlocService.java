@@ -9,4 +9,5 @@ public interface IBlocService {
     Bloc updateBloc(Bloc bloc);
     void deleteBloc(Long idBloc);
     List<Bloc> findAllBlocs();
+    Bloc affecterChambresABloc(List<Long> numChambre, long idBloc);
 }

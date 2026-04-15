@@ -37,4 +37,11 @@ public class BlocRestController {
     public void removeBloc(@PathVariable("bloc-id") Long bId) {
         blocService.deleteBloc(bId);
     }
+
+    @PostMapping("/affecter-chambres/{idBloc}")
+    public Bloc affecterChambresABloc(
+            @RequestBody List<Long> numChambre,
+            @PathVariable long idBloc) {
+        return blocService.affecterChambresABloc(numChambre, idBloc);
+    }
 }
